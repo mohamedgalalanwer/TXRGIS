@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <!-- Animation -->
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+   
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@<version>/build/three.module.js"
+        }
+      }
+    </script>
+     
+ <!-- Esri Api -->
+<link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.25/"></script>
+<!-- RealEstate Files -->
+    <link rel="stylesheet" href="./styel.css">
+    <script src="./main.js" type="module"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="viewDiv"></div>
+
+    <!-- card of many image -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide"   style="width:20%">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://f.hubspotusercontent30.net/hubfs/2456937/Trails%20at%20CC_topview_B1.png" id="image1" class="d-block w-100" alt="...">
+        
+        </div>
+        
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://fpg.roomsketcher.com/image/project/3d/36/-floor-plan.jpg" id="image2" class="d-block w-100" alt="...">
+        
+        </div>
+        <div class="carousel-item">
+          <img src="http://www.apartments.com/images/default-source/default-album/apartment-floor-plan-3d.tmb-featuredim.jpg?sfvrsn=308345ea_0" class="d-block w-100" alt="...">
+        
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Decription And plan Imag  -->
+     <div id="description" class=" d-none d-md-block bg-light" style="height:30%">
+      <h5></h5>
+      <p>
+      </p>
+    </div>
+    <!-- static plan -->
+    <img id="plan" alt="..."> 
+
+    <!--  -->
+
+    <!-- Card -->
+    <!-- <div id="card" class="card" style="width:20%; position: absolute;  visibility: hidden;">
+      <img src="https://th.bing.com/th/id/OIP.oqmBe8wpnsCUUuxUwyv5TAHaE8?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+       
+      </div>
+    </div> -->
+
+    <div id="pricediv">
+ 
+    <!-- DrobDowenList for Price -->
+    <label for="price" id="priceLabel">Choose a Price:</label>
+    <select name="price" id="price">
+      <option value="0">none</option>
+      <option value="50000-100000">50000-100000</option>
+      <option value="100000-150000">100000-150000</option>
+      <option value="150000-200000">150000-200000</option>
+    </select>
+     </div>
+     
+     <!-- Avalibale Apartment -->
+     <div id="ApartmtsStatusdiv">
+     <label for="ApartmetsStatus" id="ApartmetsStatusLabel">Apartments Status:</label>
+     <select name="ApartmtsStatus" id="ApartmetsStatus">
+       <option value="all">none</option>
+       <option value="available">available</option>
+       <option value="not available">not available</option>
+     </select>
+     </div>
+     
+   
+
+    
+   
+    <!-- Slider -->
+   
+   <div id="sliderDiv"></div>
+
+   <div id="containr">
+    
+   </div>
+   <!-- indoor Image -->
+   <!-- <img id="IndoorIcon" src="https://cdn-icons-png.flaticon.com/512/5604/5604593.png"> -->
+
+  
+    
+    <!-- Three js Canvs -->
+    <canvas id="ThreeJs"></canvas>
+
+    <!-- Levels oF Floors -->
+    <!-- <div id="floorsLevels">
+      <header>Floors</header>
+      <h1 id="level4">all</h1>
+      <h1 id="level3">3</h1>
+      <h1 id="level2">2</h1>
+      <h1 id="level1">1</h1>
+    </div> -->
+    <!-- Button For Test -->
+    <button id="btn">gltf</button>
+    
+    <!-- bootStrap Card -->
+    <!-- <div class="card" style="width: 23rem;"> -->
+        <!-- <img src="/public/creek5.jpg" class="card-img-top" alt="..."> -->
+        <!-- <div class="card-body">
+          <h5 class="card-title">Description</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div> -->
+        <!-- <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:</li>
+          <li class="list-group-item">Floors:</li>
+          <li class="list-group-item">Address:</li>
+          <li class="list-group-item">Id:</li>
+          <li class="list-group-item">City:</li>
+        </ul> -->
+        <!-- <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div> -->
+        <!-- FiletrContainrData -->
+        <!-- <div id="filterContainr">
+          <header>Real Estate Info</header>
+          <h4>Name:&nbsp;<span id="Name"></span></h4>
+          <h4>Floors:&nbsp;<span id="floors"></span></h4>
+          <h4>City:&nbsp;<span id="City"></span></h4>
+          <h4>Height:&nbsp;<span id="Height"></span></h4>
+          <h4>Type:&nbsp;<span id="Type"></span></h4>
+          <h4>Structrual_Material:&nbsp;<span id="Structrual_Material"></span></h4>
+          <h4>Function:&nbsp;<span id="Function"></span></h4>
+          <h4>Available apartments:&nbsp;<span id="AvailableApartments"></span></h4>
+          <h4>Unavailable apartments:&nbsp;<span id="UnavailableApartments"></span></h4>
+        </div> -->
+        <!-- Img Containr -->
+        <div id="ImgContainr">
+          <img src="https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg" width="300px" height="150px">
+        </div>
+        <!-- Chart js -->
+      
+           <div id="doughnut">
+            <canvas id="myChart" width="300" height="300"></canvas>
+          </div>  
+         <!-- <div id="doughnut">
+          <canvas id="mydoughnut" width="300" height="300"></canvas>
+         </div> -->
+        
+        <!-- Canvas -->
+        <!-- <canvas id="textBox"><h1>Hello</h1></canvas> -->
+     <!-- Drowbdowen list -->
+     <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item" href="../simpleWidgets.html">Meta Dubai</a>
+        <a class="dropdown-item" href="https://staging.d3g1oqscnv1c16.amplifyapp.com/">Participatory Planning</a>
+        <a class="dropdown-item" href="../bim2.html">BIM Feature</a>
+        <a class="dropdown-item" href="../slideTour.html">Slide Tour</a>
+        <a class="dropdown-item" href="./RealEstate/realEstate.html">Real Estate</a>
+      </div>
+      </div>
+        <!-- Feature Table
+        <div id="appContainer">
+          <div id="tableContainer" class="container">
+            <div id="tableDiv"></div>
+          </div>
+          <div id="mainDiv" class="esri-widget">
+            <label class="switch">
+              <input id="checkboxId" type="checkbox" checked="yes" />
+              <span class="slider round"></span>
+            </label>
+            <label class="labelText" id="labelText">Hide feature table</label>
+          </div>
+        </div>
+      </div> -->
+</body>
+</html>

@@ -1,0 +1,420 @@
+#viewDiv{
+    position: absolute;
+    left: 0%;
+    right: 5%;
+    width: 100%;
+    height: 89.5%;
+}
+#text{
+width: 90px;
+height: 50px;
+position: absolute;
+left: 30%;
+top: 20%;
+background-color:#fff;
+z-index: 1;
+}
+/* canvas{
+  z-index: 1;
+visibility:visible;
+} */
+
+body{
+    display: flex;
+     /*t
+     ax-height:100vh; */
+}
+/* #textBox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background:rgba(0, 0, 0, 0.5);
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  display: none;
+
+} */
+
+#ImgContainr{
+  position:absolute;
+  width: 19.6%;
+  height: 20%;
+  top: 0%;
+  right: 0%;
+  margin: 5px;
+  background:rgba(0, 0, 0, 0.5);
+  box-shadow:0 0 10px rgb(0, 0, 0,0.9);
+  display: none;
+
+}
+#filterContainr{
+  position:absolute;
+  width: 19%;
+  left: 0.5%;
+  top: 52%;
+  /* margin: 5px; */
+  /* background:#251c35; */
+  background:rgba(0, 0, 0, 0.8);
+  box-shadow:0 0 16px rgb(0, 0, 0,0.8);
+  color: #fff;
+  font-size: xx-small;
+  margin: 5px;
+  visibility: hidden;
+  color: #fff;
+  font-family: 'Lucida Sans';
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 10px;
+}
+#filterContainr header{
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+ color: darkseagreen;
+}
+#filterContainr h4{
+  color: darkseagreen;
+  font-size: medium;
+}
+#filterContainr h4 span{
+  color:#fff;
+}
+
+#bar{
+    position:absolute;
+    left: 0%;
+    top: 5%;
+    margin: 5px;
+    width: 19%;
+    height:auto;
+    background:rgba(0, 0, 0, 0.8);
+    box-shadow:0 0 16px rgb(0, 0, 0,0.8);
+}
+#doughnut{
+    /* margin: 5px; */
+    position:absolute;
+    bottom:10%;
+    width: 19%;
+    height: auto;
+    margin: 5px;
+    background:rgba(0, 0, 0, 0.1);
+    box-shadow:0 0 16px rgb(0, 0, 0,0.8);
+
+}
+
+.card{
+    position: absolute;
+    bottom: 17%;
+    margin: 5px;
+}
+
+.esri-popup--is-docked-top-right .esri-popup__main-container {
+    max-height: 100%;
+  }
+
+  #appContainer {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 70%;
+    z-index: 1;
+    position: absolute;
+    top: 59%;
+    left: 28%;
+  }
+
+
+  .container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 22px;
+    vertical-align: middle;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* Rounded sliders */
+
+  .slider.round {
+    border-radius: 20px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .labelText {
+    padding-left: 5px;
+    font-size: 15px;
+  }
+
+  #mainDiv {
+    padding: 8px;
+  }
+
+  .esri-view .esri-view-surface--inset-outline:focus::after {
+    outline: none !important;
+    }
+    .dropdown{
+      position: absolute;
+      top: 0px;
+      left: 0%;
+      border-radius: 20px;
+     background-color: #fff;
+     margin: 5px;
+     
+      z-index: 1;
+    }
+    #dropdownMenuButton{
+      background-color: #fff;
+      color: black;
+    }
+    .dropdown-item{
+      text-align: center;
+      font-family: 'Times New Roman', serif;
+      
+    }
+    .dropdown-item:hover{
+      background-color: #3e8e41;
+     
+      
+    }
+    /* Three js Canvas */
+    #ThreeJs{
+      position: absolute;
+      left: 30%;
+      top: 10%;
+      z-index: 1;
+     
+      border-radius:10px;
+      background:rgba(254, 253, 253, 0.3);
+      box-shadow:0 0 16px rgb(0, 0, 0,0.8);
+      visibility: hidden;
+    
+    }
+    #btn{
+      position: absolute;
+      left: 80%;
+      top: 70%;
+      z-index: 1;
+      display: none;
+    }
+
+    #floorsLevels{
+      background-color: #ccc;
+      border-radius: 10px;
+      z-index: 1;
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      text-align: center;
+     
+    }
+    #floorsLevels header{
+      color: coral;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #floorsLevels h1{
+      color: #1ABC9C;
+    }
+
+   #floorsLevels h1:hover{
+   color: yellow;
+    cursor: pointer;
+   }
+#sliderDiv{
+  z-index: 2;
+  width: 30%;
+  height: 8%;
+   position: absolute;
+  left:25%;
+  top: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  
+}
+#price{
+  /* position: absolute;
+  left: 55%;
+  top: 50%; */
+z-index: 1;
+}
+#price:hover{
+  background-color: #1ABC9C;
+}
+#priceLabel{
+  z-index: 2;
+  /* position: absolute;
+  left: 9%;
+  top:0%; */
+  color:gray;
+  font-family: 'Lucida Sans';
+  font-style: oblique;
+  font-weight: bold;
+}
+#ApartmetsStatus{
+  /* position: absolute;
+  left: 60%;
+  top: 70%; */
+z-index: 2;
+}
+#ApartmetsStatus:hover{
+  background-color: #1ABC9C;
+}
+#ApartmetsStatusLabel{
+  z-index: 2;
+  /* position: absolute;
+  left: 7%;
+  top: 70%; */
+  color: gray;
+  font-family: 'Lucida Sans';
+  font-style: oblique;
+  font-weight: bold;
+}
+#floorslabel{
+  position: absolute;
+  left: 5%;
+  top: 11%;
+  color: #fff;
+  font-family: 'Lucida Sans';
+  font-style: oblique;
+  font-weight: bold;
+}
+
+ #main{
+  position: absolute;
+      right: 0.5%;
+      top: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      width: 20%;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 80%);
+      height: 40%;
+      z-index: 1;
+      justify-content: center;
+      text-align: center;
+
+} 
+.esri-component.esri-zoom.esri-widget{
+  position: absolute;
+  top: 80px;
+}
+.esri-component.esri-expand.esri-widget{
+  position: absolute;
+  top: 160px;
+}
+#IndoorIcon{
+  width: 50px;
+  height: auto;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+#carouselExampleDark{
+  position: absolute;
+  top: 1%;
+  right:0.5%;
+  visibility: hidden;
+
+  
+}
+#pricediv{
+  position: absolute;
+  left: 56%;
+  top: 80%;
+  z-index:2;
+
+}
+#ApartmtsStatusdiv{
+  position: absolute;
+  left:55%;
+  top:84% ;
+  z-index: 2;
+}
+#description{
+  z-index: 1;
+  width: 20%;
+  position: absolute;
+  right: 0.5%;
+  top: 28%;
+  visibility: hidden;
+}
+#plan{
+  z-index: 1;
+ width: 20%;
+  height: auto;
+  position: absolute;
+  right: 0.5%;
+  top: 58%;
+  visibility: hidden;
+    
+}
+#containr{
+  position: absolute;
+  left: 20%;
+  top: 78%;
+  z-index:1;
+  width: 55%;
+  height: 12%;
+  background-color: #fff;
+}
+
+   
+   
+    
