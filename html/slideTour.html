@@ -117,8 +117,8 @@
         bottom: 370px;
         left:  375px;
         rotate: 330deg;
-        
-        
+
+
       } */
     #slider {
       position: absolute;
@@ -139,14 +139,14 @@
         width: 50px;
         height: 50px;
         background-color: white;
-       
-      
+
+
         color:gray;
         text-align: center;
         justify-content: center;
         font-size: 25px;
-       
-        
+
+
       } */
     .dropdown {
       position: absolute;
@@ -238,7 +238,7 @@
       justify-content: center;
       text-align: center;
       align-items: center;
-  
+
       visibility: hidden;
 
     }
@@ -435,8 +435,8 @@
   white-space: nowrap;
   line-height: normal;
   margin: 0%;
-  
- 
+
+
 
   overflow: hidden;
 }
@@ -457,7 +457,7 @@
   animation-delay: 5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  
+
 }
 
 #css-typing p:nth-child(3) {
@@ -560,7 +560,7 @@
   50% {
     border-color: tranparent;
   }
- 
+
 }
  .esri-ui-corner .esri-component{
     position: absolute;
@@ -595,8 +595,9 @@
       "esri/layers/GraphicsLayer",
       "esri/layers/SceneLayer",
       "esri/widgets/Daylight",
-      "esri/widgets/Expand"
-     
+      "esri/widgets/Expand",
+      'esri/identity/IdentityManager',
+
     ], (
       SceneView,
       WebScene,
@@ -617,10 +618,32 @@
       GraphicsLayer,
       SceneLayer,
       Daylight,
-      Expand
-    
-    ) => {
+      Expand,
+      identityManager
 
+    ) => {
+// Access Privte ArcgisOnline Rescources
+      const portalUrl = 'https://www.arcgis.com';
+       const username ='hazem_txresam';
+       const password = '123456eR@@@';
+       const server = portalUrl + '/sharing/rest';
+        const tokenServiceUrl = server + '/generateToken';
+        const serverInfo = {
+        tokenServiceUrl
+      };
+      const userInfo = {
+        username,
+        password
+      };
+      /* GENERATES AND REGISTERS THE TOKEN */
+      identityManager.generateToken(serverInfo, userInfo).then((tokenInfo) => {
+        console.log("tokenInfo",tokenInfo)
+        identityManager.registerToken({
+          ...tokenInfo,
+          server
+        })
+      });
+//===========================================================================================
       const scene = new WebScene({
         portalItem: {
           //  id: "df1d4a6f47824722880b3ecf6c1173d5"
@@ -661,7 +684,7 @@
       });
 
       //DayLight===========================================
-     
+
       const daylightExpand = new Expand({
           expandTooltip: "Day Light widget",
           view: view,
@@ -672,7 +695,7 @@
           group: "top-left",
         });
 
-   
+
 view.ui.add(daylightExpand,"top-left");
 
       //URL Layer==================================================
@@ -883,7 +906,7 @@ view.ui.add(daylightExpand,"top-left");
       let photo9="../centeral.jpg"
       let photo10="../Dubaiz.jpg"
       let photo11="../11-5.jpg"
-    
+
 
       let dec1 = "Dubai Creek Tower (Arabic: برج خور دبي) is a supported observation tower to be built in Dubai, United Arab Emirates. The preliminary cost of the tower is AED 3.67 billion (US$1 billion). It was expected to be completed in 2022 at the earliest, but the completion date is unknown since, as of now, the tower is on hold because of the COVID-19 pandemic. The tower was initially known as The Tower at Dubai Creek Harbour.Dubai Creek (Arabic: خور دبي, romanized: Khūr Dubay) has been described as a natural saltwater creek, tidal inlet, and watercourse or waterway in Dubai, United Arab Emirates (UAE)"
 
@@ -958,7 +981,7 @@ view.ui.add(daylightExpand,"top-left");
           view.goTo(camera2, { duration: 10000 }).then(() => {
             csstyping.style.display = "block"
             label.style.visibility = "visible"
-        
+
           })
           //})
 
@@ -981,7 +1004,7 @@ view.ui.add(daylightExpand,"top-left");
             heading: 29.1052,
             fov: 55.0000
           })
-       
+
           let camera2 = new Camera({
             position: [55.3625, 25.2030, 412.2432],
             tilt: 70,
@@ -992,12 +1015,12 @@ view.ui.add(daylightExpand,"top-left");
           view.goTo(camera2, { duration: 20000 }).then(() => {
             csstyping.style.display = "block"
             label.style.visibility = "visible"
-         
+
             createBoundingBox(55.3478993539878, 55.35528108265774,
               25.199492107295622, 25.20993787530922
               , 22.046161195263267, 217.0553213817874, "#1ABC9C")
           })
-          
+
 
 
         } else if (currentLayer == 3) {
@@ -1024,7 +1047,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.35080316364044, 55.36260099789348, 25.194756249277468
               , 25.203901488866233, 21.498605894774208, 246.88519381452352, "#F1C40F")
           })
-        
+
         } else if (currentLayer == 4) {
           scene.add(tower)
           csstyping.style.display = "none"
@@ -1049,7 +1072,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.35262492655155, 55.35909248674459, 25.19459908020342
               , 25.200280109414635, 22.237459716801823, 951.6325497813523, "#2ECC71")
           })
-     
+
 
         } else if (currentLayer == 5) {
           scene.add(siland)
@@ -1075,7 +1098,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.340889039607724, 55.349092060453685, 25.20011021758757
               , 25.211316559496332, 9.04200336914073, 218.33759706066624, "#8E44AD")
           })
-      
+
 
         } else if (currentLayer == 6) {
           scene.add(retail)
@@ -1103,7 +1126,7 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-        
+
 
         } else if (currentLayer == 7) {
           scene.add(parkSouth)
@@ -1131,7 +1154,7 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-        
+
         } else if (currentLayer == 8) {
           scene.add(parkNorth)
           csstyping.style.display = "none"
@@ -1159,7 +1182,7 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-       
+
 
         } else if (currentLayer == 9) {
           scene.add(centeral)
@@ -1189,13 +1212,13 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-         
+
 
 
         } else if (currentLayer == 10) {
           scene.add(norhtGateway)
           csstyping.style.display = "none"
-         
+
           label.style.visibility = "hidden"
           labelText.textContent = "northgateway"
           img.src = photo10
@@ -1209,13 +1232,13 @@ view.ui.add(daylightExpand,"top-left");
             fov: 55.0000
           })
           view.goTo(camera1, { duration: 20000 }).then(() => {
-            
+
             label.style.visibility = "visible"
             createBoundingBox(55.356296935954546, 55.362910964024806, 25.203028595299646
               , 25.207508187500014, 22.04615739989822, 217.3846154808998, "#e70e70")
           })
 
-        
+
 
         } else if (currentLayer == 11) {
           csstyping.style.display = "none"
@@ -1337,7 +1360,7 @@ view.ui.add(daylightExpand,"top-left");
             heading: 29.1052,
             fov: 55.0000
           })
-         
+
           let camera2 = new Camera({
             position: [55.3625, 25.2030, 412.2432],
             tilt: 70,
@@ -1380,7 +1403,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.35080316364044, 55.36260099789348, 25.194756249277468
               , 25.203901488866233, 21.498605894774208, 246.88519381452352, "#F1C40F")
           })
-        
+
         } else if (currentLayer == 4) {
           scene.add(tower)
           csstyping.style.display = "none"
@@ -1406,7 +1429,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.35262492655155, 55.35909248674459, 25.19459908020342
               , 25.200280109414635, 22.237459716801823, 951.6325497813523, "#2ECC71")
           })
-        
+
 
         } else if (currentLayer == 5) {
           scene.add(siland)
@@ -1434,7 +1457,7 @@ view.ui.add(daylightExpand,"top-left");
             createBoundingBox(55.340889039607724, 55.349092060453685, 25.20011021758757
               , 25.211316559496332, 9.04200336914073, 218.33759706066624, "#8E44AD")
           })
-        
+
 
         } else if (currentLayer == 6) {
           scene.add(retail)
@@ -1463,12 +1486,12 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-       
+
 
         } else if (currentLayer == 7) {
           scene.add(parkSouth)
           csstyping.style.display = "none"
-          
+
            p1.textContent="The huge park has five entrance gates"
             p2.textContent="Three of those are on the main street"
             p3.textContent=""
@@ -1494,7 +1517,7 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-        
+
 
         } else if (currentLayer == 8) {
           scene.add(parkNorth)
@@ -1525,7 +1548,7 @@ view.ui.add(daylightExpand,"top-left");
 
           })
 
-        
+
 
         } else if (currentLayer == 9) {
           scene.add(centeral)
@@ -1642,7 +1665,7 @@ view.ui.add(daylightExpand,"top-left");
           scene.add(landScap)
             labelText.textContent = "Landscape"
             csstyping.style.display = "none"
-          
+
           scene.removeMany([norhtGateway, centeral, parkNorth, parkSouth, retail, siland, tower, urbanCore, creekBeach])
           labelText.textContent = "Landscape"
           img.src = photo1
@@ -1664,7 +1687,7 @@ view.ui.add(daylightExpand,"top-left");
           //  view.goTo(camera1,{duration:20000})
           //.then(()=>{
           view.goTo(camera2, { duration: 10000 }).then(() => {
-        
+
             label.style.visibility = "visible"
           })
           //})
@@ -1985,7 +2008,7 @@ view.ui.add(daylightExpand,"top-left");
             img.src = photo1
             description.textContent = dec1
             header.textContent = "Dubai Creek"
-          
+
             let camera1 = new Camera({
               position: [55.3591, 25.1724, 4386.9360],
               tilt: 30,
@@ -2010,7 +2033,7 @@ view.ui.add(daylightExpand,"top-left");
           } else if (i == 2) {
             scene.add(creekBeach)
             csstyping.style.display = "none"
-            
+
            p1.textContent="Creek Beach district is apedestrian-friendly sanctuary nestled ).."
             p2.textContent="between Creek Island Dubai and Dubai Creek Tower"
             p3.textContent=""
@@ -2123,7 +2146,7 @@ view.ui.add(daylightExpand,"top-left");
 
           } else if (i == 5) {
             scene.add(siland)
-            
+
             csstyping.style.display = "none"
             p1.textContent="Creek Island A residential district in Dubai Creek Harbour"
             p2.textContent="Buildings include Dubai Creek Residences"
@@ -2204,7 +2227,7 @@ view.ui.add(daylightExpand,"top-left");
 
             scene.add(parkSouth)
             csstyping.style.display = "none"
-            
+
              p1.textContent="The huge park has five entrance gates"
             p2.textContent="Three of those are on the main street"
             p3.textContent=""
@@ -2431,7 +2454,7 @@ view.ui.add(daylightExpand,"top-left");
       let checkbox = document.querySelector('input[type="checkbox"]');
       checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
-        
+
           scene.addMany([landScap, creekBeach, urbanCore, retail, siland, tower, parkSouth, parkNorth, centeral, norhtGateway])
           view.graphics.removeAll()
 
@@ -2466,13 +2489,13 @@ view.ui.add(daylightExpand,"top-left");
       Dubai Creek Tower (Arabic: برج خور دبي) is a supported observation tower to be built in Dubai, United Arab Emirates.
     </p>
     <p id="p2">
-      Typed text 2 Longer 
+      Typed text 2 Longer
     </p>
     <p id="p3">
       Typed text 3
     </p>
   </div>
-  
+
   <!--  -->
   <div id="label">
     <h5 id="labelText">Dubai Creek</h5>

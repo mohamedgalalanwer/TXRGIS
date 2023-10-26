@@ -31,6 +31,7 @@ require([
   "esri/core/reactiveUtils",
   "esri/layers/support/LabelClass",
   "esri/widgets/BuildingExplorer",
+  "esri/identity/IdentityManager",
 ], (
   SceneView,
   WebScene,
@@ -55,8 +56,31 @@ require([
   FeatureTable,
   reactiveUtils,
   LabelClass,
-  BuildingExplorer
+  BuildingExplorer,
+  identityManager
 ) => {
+  // Access Privte ArcgisOnline Rescources
+  const portalUrl = "https://www.arcgis.com";
+  const username = "hazem_txresam";
+  const password = "123456eR@@@";
+  const server = portalUrl + "/sharing/rest";
+  const tokenServiceUrl = server + "/generateToken";
+  const serverInfo = {
+    tokenServiceUrl,
+  };
+  const userInfo = {
+    username,
+    password,
+  };
+  /* GENERATES AND REGISTERS THE TOKEN */
+  identityManager.generateToken(serverInfo, userInfo).then((tokenInfo) => {
+    console.log("tokenInfo", tokenInfo);
+    identityManager.registerToken({
+      ...tokenInfo,
+      server,
+    });
+  });
+  //===========================================================================================
   let selectedFeature, id;
   const scene = new WebScene({
     portalItem: {
@@ -72,7 +96,7 @@ require([
       //FloorForTest
       // id:"e9d7973b33f6482d96f113042a5d80b4"
       //final
-    //  id:"511a0bf4f2fd45d09f9d94cd6e0819a9"
+      //  id:"511a0bf4f2fd45d09f9d94cd6e0819a9"
       //finalScene
       id: "1ed33ff1ecb948c380337218566e0976",
     },
@@ -87,7 +111,7 @@ require([
 
   const view = new SceneView({
     map: scene,
-  
+
     container: "viewDiv",
     ui: {
       components: ["zoom"],
@@ -216,10 +240,9 @@ require([
     url: RoofURL,
   });
 
-    // scene.add(
-    //   Floor1,
-    // );
-
+  // scene.add(
+  //   Floor1,
+  // );
 
   //SliderOfFloors===================================================
   const slider = new Slider({
@@ -236,8 +259,8 @@ require([
   });
   view.when(() => {
     slider.on("thumb-drag", () => {
-    //  SelectApartment();
-    SelectApartmentOpacity()
+      //  SelectApartment();
+      SelectApartmentOpacity();
     });
   });
 
@@ -288,21 +311,18 @@ require([
     for (let i = 0; i < layersInScene.length; i++) {
       if (i == slider.values) {
         layersInScene[i].visible = true;
-       
-      }else if(i< slider.values) {
+      } else if (i < slider.values) {
         layersInScene[i].visible = true;
-           
-        layersInScene[i+1].opacity = 1;
+
+        layersInScene[i + 1].opacity = 1;
         layersInScene[i].opacity = 0.2;
       } else if (slider.values == 0) {
         layersInScene[i].visible = true;
-      
-      } else{
+      } else {
         layersInScene[i].visible = false;
       }
     }
   }
-
 
   //Function For create query in Apaertments
   let highlight;
@@ -353,61 +373,63 @@ require([
   }
 
   //Slide Image And description====================================================
-  let description=document.getElementById("description")
-  let plan=document.getElementById("plan")
-  let carouselExampleDark=document.getElementById("carouselExampleDark")
-  let image1=document.getElementById("image1")
-  let image2=document.getElementById("image2")
-  view.on("click",((event)=>{
-  
+  let description = document.getElementById("description");
+  let plan = document.getElementById("plan");
+  let carouselExampleDark = document.getElementById("carouselExampleDark");
+  let image1 = document.getElementById("image1");
+  let image2 = document.getElementById("image2");
+  view.on("click", (event) => {
+    view.hitTest(event).then((res) => {
+      let objectid = res.results[0].graphic.attributes.OBJECTID;
+      view.whenLayerView(scene.layers.items[1]).then((layerView) => {
+        if (highlight) {
+          highlight.remove();
+        }
 
-    
-    view.hitTest(event).then((res)=>{
-     let objectid=res.results[0].graphic.attributes.OBJECTID
-     view.whenLayerView(scene.layers.items[1]).then((layerView)=>{
-     
-      if(highlight){
-        highlight.remove()
+        highlight = layerView.highlight(res.results[0].graphic);
+      });
+
+      if (objectid == 11) {
+        image1.src =
+          "https://i.pinimg.com/736x/d0/f4/07/d0f40703e83fda37512215e7d0614e27--d-photo-floor-plans.jpg";
+        image2.src =
+          "https://www.davisapartmentsforrent.com/almondwood/wp-content/uploads/sites/3/2020/08/almondwood-two-bedroom-apartment-iso-2-1080-.jpg";
+        description.textContent =
+          "Some representative placeholder content for the first slide Some representative placeholder content for the first slide";
+        plan.src =
+          "https://www.homeplansindia.com/uploads/1/8/8/6/18862562/hfp-4005-ground-floor_orig.jpg";
+        plan.style.visibility = "visible";
+        carouselExampleDark.style.visibility = "visible";
+        description.style.visibility = "visible";
+      } else if (objectid == 3) {
+        image1.src =
+          "http://cdn.home-designing.com/wp-content/uploads/2014/06/Apartment-house-plan-for-Young-Professional.jpg";
+        image2.src =
+          "https://media.istockphoto.com/id/1158053848/photo/modern-interior-design-isolated-floor-plan-with-white-walls-blueprint-of-apartment-house.jpg?s=612x612&w=0&k=20&c=w41RLsMlOhN74fzh6dgAGvPcQIPRCUOfwsSZcZKQB4o=";
+        description.textContent =
+          "Some representative placeholder content for the first slide Some representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slide";
+
+        plan.src =
+          "https://www.researchgate.net/publication/355173321/figure/fig1/AS:1077677742141442@1633949804772/Sample-floor-plan-image-with-the-specification-of-different-room-sizes-and-furniture.jpg";
+        carouselExampleDark.style.visibility = "visible";
+        description.style.visibility = "visible";
+        plan.style.visibility = "visible";
+      } else if (objectid == 24) {
+        image1.src =
+          "https://i.pinimg.com/736x/a1/e4/08/a1e408d7d5129bfea6ba66a27288b51b--d-home-design-house-design.jpg";
+        image2.src =
+          "https://www.davisapartmentsforrent.com/almondwood/wp-content/uploads/sites/3/2020/08/almondwood-two-bedroom-apartment-iso-2-1080-.jpg";
+        description.textContent =
+          "Some representative placeholder content for the first slide Some representative placeholder content for the first slide.Some representative placeholder content for the first slide";
+
+        plan.src =
+          "https://images.adsttc.com/media/images/5e72/bff7/b357/6549/2a00/01a4/slideshow/1.Floor_plan.jpg?1584578541";
+        carouselExampleDark.style.visibility = "visible";
+        description.style.visibility = "visible";
+        plan.style.visibility = "visible";
       }
-    
-      highlight=layerView.highlight(res.results[0].graphic)
-     })
-
-   
-    
-     if(objectid==11){
-      image1.src="https://i.pinimg.com/736x/d0/f4/07/d0f40703e83fda37512215e7d0614e27--d-photo-floor-plans.jpg"
-      image2.src="https://www.davisapartmentsforrent.com/almondwood/wp-content/uploads/sites/3/2020/08/almondwood-two-bedroom-apartment-iso-2-1080-.jpg"
-      description.textContent="Some representative placeholder content for the first slide Some representative placeholder content for the first slide"
-      plan.src="https://www.homeplansindia.com/uploads/1/8/8/6/18862562/hfp-4005-ground-floor_orig.jpg"
-      plan.style.visibility="visible"
-      carouselExampleDark.style.visibility="visible"
-      description.style.visibility="visible"
-    
-
-     }else if(objectid==3){
-      image1.src="http://cdn.home-designing.com/wp-content/uploads/2014/06/Apartment-house-plan-for-Young-Professional.jpg"
-      image2.src="https://media.istockphoto.com/id/1158053848/photo/modern-interior-design-isolated-floor-plan-with-white-walls-blueprint-of-apartment-house.jpg?s=612x612&w=0&k=20&c=w41RLsMlOhN74fzh6dgAGvPcQIPRCUOfwsSZcZKQB4o="
-      description.textContent="Some representative placeholder content for the first slide Some representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slideSome representative placeholder content for the first slide"
-     
-      plan.src="https://www.researchgate.net/publication/355173321/figure/fig1/AS:1077677742141442@1633949804772/Sample-floor-plan-image-with-the-specification-of-different-room-sizes-and-furniture.jpg"
-      carouselExampleDark.style.visibility="visible"
-      description.style.visibility="visible"
-      plan.style.visibility="visible"
-     }else if(objectid==24){
-      image1.src="https://i.pinimg.com/736x/a1/e4/08/a1e408d7d5129bfea6ba66a27288b51b--d-home-design-house-design.jpg"
-      image2.src="https://www.davisapartmentsforrent.com/almondwood/wp-content/uploads/sites/3/2020/08/almondwood-two-bedroom-apartment-iso-2-1080-.jpg"
-      description.textContent="Some representative placeholder content for the first slide Some representative placeholder content for the first slide.Some representative placeholder content for the first slide"
-     
-      plan.src="https://images.adsttc.com/media/images/5e72/bff7/b357/6549/2a00/01a4/slideshow/1.Floor_plan.jpg?1584578541"
-      carouselExampleDark.style.visibility="visible"
-      description.style.visibility="visible"
-      plan.style.visibility="visible"
-     }
-    })
-
-
-  }))
+    });
+  });
 
   //FloorsLevels Show And Hide==========================================
   let level1 = document.getElementById("level1");
@@ -416,7 +438,6 @@ require([
   let level4 = document.getElementById("level4");
   let sceneLayers = scene.layers.items;
   let flag = true;
-  
 
   //scene.addAll([Apartment1,Apartment2,Apartment3,Apartment4,Apartment5,Apartment6])
   view.when(() => {
@@ -449,8 +470,6 @@ require([
       });
     }
   });
-
- 
 
   //===============================================================================================
 
@@ -501,8 +520,6 @@ require([
     },
   });
 
- 
-
   //DOM Elements=============================================================================
 
   let Name = document.getElementById("Name");
@@ -516,32 +533,32 @@ require([
   let Function = document.getElementById("Function");
 
   //Chart js======================================
-  const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById("myChart");
 
   let floorChart = new Chart(ctx, {
-    type: 'bar',
+    type: "bar",
     data: {
-      labels: ['Apartment'],
-      datasets: [{
-        label: 'Price',
-        data: [0],
-        borderWidth: 2,
-        
-      }]
+      labels: ["Apartment"],
+      datasets: [
+        {
+          label: "Price",
+          data: [0],
+          borderWidth: 2,
+        },
+      ],
     },
     options: {
       responsive: true,
       plugins: {
         legend: {
-          position: 'top',
+          position: "top",
         },
         title: {
           display: true,
-          text: 'Price of Apartment'
-        }
-      }
-
-    }
+          text: "Price of Apartment",
+        },
+      },
+    },
   });
 
   // const ctx2 = document.getElementById('mydoughnut');
@@ -613,10 +630,7 @@ require([
         updateChart(floorChart, [
           response.results[0].graphic.attributes.Pos_Bottom_Align,
         ]);
-
-       
       }
     });
   });
-
 });

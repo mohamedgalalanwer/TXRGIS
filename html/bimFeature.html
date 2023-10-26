@@ -22,8 +22,32 @@
         "esri/WebScene",
         "esri/views/SceneView",
         "esri/widgets/BuildingExplorer",
-        "esri/layers/BuildingSceneLayer"
-      ], (WebScene, SceneView, BuildingExplorer, BuildingSceneLayer) => {
+        "esri/layers/BuildingSceneLayer",
+        'esri/identity/IdentityManager',
+      ], (WebScene, SceneView, BuildingExplorer, BuildingSceneLayer,identityManager) => {
+
+        // Access Privte ArcgisOnline Rescources
+       const portalUrl = 'https://www.arcgis.com';
+       const username ='hazem_txresam';
+       const password = '123456eR@@@';
+       const server = portalUrl + '/sharing/rest';
+       const tokenServiceUrl = server + '/generateToken';
+       const serverInfo = {
+        tokenServiceUrl
+      };
+      const userInfo = {
+        username,
+        password
+      };
+      /* GENERATES AND REGISTERS THE TOKEN */
+      identityManager.generateToken(serverInfo, userInfo).then((tokenInfo) => {
+        console.log("tokenInfo",tokenInfo)
+        identityManager.registerToken({
+          ...tokenInfo,
+          server
+        })
+      });
+//===========================================================================================
         // Load webscene and display it in a SceneView
         const webscene = new WebScene({
           portalItem: {
@@ -36,7 +60,7 @@
           container: "viewDiv",
           map: webscene
         });
-        
+
         const buildingLayer = new BuildingSceneLayer({
           url:
             "https://tiles.arcgis.com/tiles/hUPR9iC6qnMcwWsa/arcgis/rest/services/The_Address_Dubai_Residences/SceneServer",

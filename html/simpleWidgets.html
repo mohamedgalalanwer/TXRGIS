@@ -10,14 +10,14 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../styel.css/simpleWidgets.css">
 
-     
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css">
      <script src="https://js.arcgis.com/4.24/"></script>
     <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
 
     <body style="overflow:hidden;">
-     
+
       <button
       id="clear"
       class="esri-widget--button esri-interactive esri-icon-trash"
@@ -35,7 +35,7 @@
           <a class="dropdown-item" href="./RealEstate/realEstate.html">Real Estate</a>
         </div>
         </div>
-       
+
 
         <!-- <img id="btnFootPrint" src="http://www.wired.com/images_blogs/wiredscience/2013/10/sf_building-data.jpg"> &nbsp;&nbsp; -->
         <span id="lidar">
@@ -51,7 +51,7 @@
           <img id="BimModelIcon" src="../bimmodel.jpg">
           <span id="BimModelText">Bim Model</span>
         </span>
-        
+
         <span id="creek">
           <img id="btnDubaiCreek" src="../creek4.jpg">
           <span id=dubaiCreekText>Dubai Creek</span>
@@ -64,7 +64,7 @@
           <img id="btnWater" src="../sea.png">
           <span id="btnWaterText">Water</span>
         </span>
-     
+
 
         <!-- tooltipTextForPoint -->
       <span id="Facilities">
@@ -79,7 +79,7 @@
        <span id="metro">
         <img id="metroStation" src="data:image/png;base64,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">
         <span id="metroStationText">Police Station</span>
-       </span>  
+       </span>
        <span id="marin">
         <img id="marinStation" src="https://cdn-icons-png.flaticon.com/512/2053/2053928.png">
         <span id="marinStationText">Fire Staions</span>
@@ -92,12 +92,12 @@
         <img id="shop" src="https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png">
         <span id="shopText">Shop</span>
       </span>
-     
+
        <span id="Mark">
         <img id="landMark" src="https://cdn-icons-png.flaticon.com/512/1174/1174983.png">
         <span id="landMarkText">landMark</span>
        </span>
-       
+
         </div>
         <span id="rail">
           <img id="railWay" src="../entrance.png">
@@ -108,7 +108,7 @@
             <img id="RoadsIcon" src="../road-cone-5763.png">
             <span id="RoadsIconText">Transportation</span>
           </span>
-      
+
       <div id="subRoadsIcon">
         <span id="port">
           <img id="ports" src="../port.png">
@@ -130,7 +130,7 @@
         <img id="UAERailWay" src="../train.png">
         <span id="UAERailWayText">UAE RailWay</span>
       </span>
-     
+
         </div>
         <!-- <div id="backOfIcon">
         </div> -->
@@ -145,21 +145,21 @@
           <button id="dubaidowentowenicon"><i class="fa fa-bookmark"></i></button>
           <button id="creekharbouricon"><i class="fa fa-bookmark"></i></button> -->
         </div>
-       
+
         <span id="book">
           <img id="bookmark"  src="../bookmark-ribbon-7790.png">
           <span id="bookmarkText">BookMark</span>
         </span>
-       
 
-       
 
-        
 
-        
-       
-       
-        
+
+
+
+
+
+
+
     </body>
 
     <style>
@@ -175,7 +175,7 @@
         z-index: 0;
         position: absolute;
        top: 0px;
-    
+
       }
       #portsText{
         position: absolute;
@@ -302,7 +302,7 @@
       }
       #sho:hover #shopText{
         visibility: visible;
-      } 
+      }
 
 
       #tramStationText{
@@ -355,7 +355,7 @@
         padding: 3px 7px;
         border-radius: 7px;
         z-index: 1;
-    
+
         visibility: hidden;
 
       }
@@ -376,7 +376,7 @@
         border-radius: 7px;
         z-index: 1;
         visibility: hidden;
-        
+
       }
       #Mark:hover #landMarkText{
         visibility: visible;
@@ -567,7 +567,7 @@
         border-radius: 7px;
         z-index: 1;
         visibility: hidden;
-        
+
      }
      #dubaiCreekText::before{
       content: "";
@@ -640,7 +640,7 @@
      }
 
 
-      
+
 
       #FacilitiesText{
         position: absolute;
@@ -656,7 +656,7 @@
         border-radius: 7px;
         z-index: 1;
         visibility: hidden;
-     
+
       }
       #FacilitiesText::before{
         content: "";
@@ -667,13 +667,13 @@
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
       border-bottom: 10px solid rgba(0, 0, 0, 0.5);
-      
+
       }
       #Facilities:hover #FacilitiesText{
         visibility: visible;
-     
+
       }
-    
+
       /* Esri map view in screen */
       .esri-view .esri-view-root{
         height: 90.5%;
@@ -701,7 +701,7 @@
         z-index: 1;
       }
       .action-button {
-        
+
         font-size: 16px;
         background-color: transparent;
         border: 1px solid #d3d3d3;
@@ -733,8 +733,8 @@
         border: hidden;
         border-radius: 10px;
       }
-  
-     
+
+
       #dubaiMarinaicon{
         position: absolute;
         left: 0px;
@@ -834,11 +834,11 @@
 
       }
 
-        /* 
-        
-       
-       
-        
+        /*
+
+
+
+
         creekharbouricon */
 
       #ports{
@@ -891,7 +891,7 @@
       #UAERoads:hover{
         width: 55px;
       }
-      
+
       #UAERailWay{
         width: 50px;
         height: auto;
@@ -916,8 +916,8 @@
         cursor: pointer;
         display: none;
       }
-     
- 
+
+
 
       #metroStation{
         width: 50px;
@@ -928,7 +928,7 @@
         cursor: pointer;
         display: none;
       }
-    
+
       #marinStation{
         width: 50px;
         height: auto;
@@ -939,7 +939,7 @@
         display: none;
       }
 
-     
+
       #landMark{
         width: 40px;
         height: auto;
@@ -956,7 +956,7 @@
         top: 120px;
         cursor: pointer;
       }
-     
+
       #shop{
         width: 50px;
         height: auto;
@@ -964,9 +964,9 @@
         left: 5px;
         top: 125px;
         cursor: pointer;
-       
+
       }
-    
+
 
       #railWay{
       position: absolute;
@@ -998,7 +998,7 @@
         box-shadow: 0 1px 1px  rgb(0,0,0,0.5);
 
       }
-     
+
 
 
       #point{
@@ -1030,8 +1030,8 @@
         width: 2%;
       }
 
-      
-     
+
+
     #RoadsIcon{
       position: absolute;
       bottom: 13%;
@@ -1070,7 +1070,7 @@
       text-align: center;
       align-items: center;
       padding: 10px 10px 10px 10px;
-      
+
     }
     #slideDiv div{
       padding-top: 0px;
@@ -1085,20 +1085,20 @@
       justify-content: center;
       text-align: center;
       align-items: center;
-    
-    }
-   
 
-  
+    }
+
+
+
     .i:hover{
       cursor: pointer;
       box-shadow: 0px 0px 12px #039962;
         border-style: solid;
         border-width: thin;
         border-color: #039962;
-     
+
       }
-    
+
 
      #subpoint{
       position: absolute;
@@ -1121,7 +1121,7 @@
       background-color:rgb(255,255,255,0.6);
       right: 9%;
       top: 57%;
-     
+
       z-index: 1;
       -webkit-box-shadow: 0 1px 1px  rgb(0,0,0,0.5);
       -moz-box-shadow: 0 1px 1px  rgb(0,0,0,0.5);
@@ -1134,7 +1134,7 @@
       width: 0px;
       height: 0px;
       position: absolute;
-     
+
       left:77%;
       top:100%;
       border-left: 6px solid transparent;
@@ -1149,7 +1149,7 @@
       width: 0px;
       height: 0px;
       position: absolute;
-     
+
       left:77%;
       top:180px;
 
@@ -1317,10 +1317,10 @@
   color: #039962;
     cursor: pointer;
     z-index: 2;
-    
+
 }
 
-#btnWater:hover {width: 2.2%;} 
+#btnWater:hover {width: 2.2%;}
 
 .esri-home.esri-widget--button.esri-widget{
     position: absolute;
@@ -1335,7 +1335,7 @@
     position: absolute;
     top: 150px;
    } */
-  
+
    .esri-widget--button.esri-Locate{
     position: absolute;
     left:180px;
@@ -1344,8 +1344,8 @@
     background-color:#fff;
     border-radius: 10px;
    }
-  
-  
+
+
 
    .esri-widget--button.esri-Compass{
     position: absolute;
@@ -1465,28 +1465,28 @@ height: auto;
 
 }
  .esri-home.esri-widget--button.esri-widget{
- 
+
    left: 0px;
     top: 200px;
     width: 40px;
 }
 .esri-widget--button.esri-Locate{
-   
+
     left:0px;
     top: 280px;
     width: 40px;
-   
+
    }
-  
-  
+
+
 
    .esri-widget--button.esri-Compass{
-   
+
     left: 0px;
     top: 240px;
     width: 40px;
-   
-   } 
+
+   }
 }
 
 .dropdown{
@@ -1495,7 +1495,7 @@ height: auto;
   left: 5px;
   border-radius: 20px;
  background-color: #fff;
- 
+
   z-index: 1;
 }
 #dropdownMenuButton{
@@ -1505,20 +1505,20 @@ height: auto;
 .dropdown-item{
   text-align: center;
   font-family: 'Times New Roman', serif;
-  
+
 }
 .dropdown-item:hover{
   background-color: #3e8e41;
- 
-  
+
+
 }
 
 .esri-input.esri-search__input::placeholder{
         color: #039962;
-        
+
    }
 
-   
+
    .esri-component.esri-zoom.esri-widget{
     position: absolute;
     top: 80px;
@@ -1648,8 +1648,8 @@ height: auto;
     top: 200px;
   } */
 
-  
-  
+
+
     </style>
 
     <link
@@ -1659,7 +1659,7 @@ height: auto;
     <script src="https://js.arcgis.com/4.24/"></script>
 
     <script >
-    
+
       require([
         "esri/WebScene",
         "esri/views/SceneView",
@@ -1708,7 +1708,11 @@ height: auto;
       "esri/widgets/Sketch",
       "esri/Camera",
       "esri/layers/BuildingSceneLayer",
-      "esri/widgets/BuildingExplorer"
+      "esri/widgets/BuildingExplorer",
+      "esri/core/urlUtils",
+      'esri/portal/Portal',
+      'esri/identity/OAuthInfo',
+      'esri/identity/IdentityManager',
 
       ], (
         WebScene,
@@ -1758,23 +1762,48 @@ height: auto;
        Sketch,
        Camera,
        BuildingSceneLayer,
-       BuildingExplorer
-       
-  
-        
+       BuildingExplorer,
+       urlUtils,
+       Portal,
+       OAuthInfo,
+       identityManager,
+
+
+
+
       ) => {
         /***********************************
          * Create the SceneView
          ***********************************/
         // Load a webscene
-       
-       // esriConfig.apiKey = "AAPK61cfe82d6e3e4fb7a773e057fedafbb7Ciu6-krG8EwNJugsvNvdyhhlNRyV6tBZRBb2i0nRNmm6gkgow2IOszi_2rJ_ta2h";
+// Access Privte ArcgisOnline Rescources
+       const portalUrl = 'https://www.arcgis.com';
+       const username ='hazem_txresam';
+       const password = '123456eR@@@';
+       const server = portalUrl + '/sharing/rest';
+      const tokenServiceUrl = server + '/generateToken';
+      const serverInfo = {
+        tokenServiceUrl
+      };
+      const userInfo = {
+        username,
+        password
+      };
+      /* GENERATES AND REGISTERS THE TOKEN */
+      identityManager.generateToken(serverInfo, userInfo).then((tokenInfo) => {
+        console.log("tokenInfo",tokenInfo)
+        identityManager.registerToken({
+          ...tokenInfo,
+          server
+        })
+      });
+//===========================================================================================
         const scene = new WebScene({
           portalItem: {
           // id: "e215f07d758749f082d103c7f5a04065"
            id:"cb405ff8ea6c48af9ff5258462218444"
           },
-         
+
         });
       console.log("scene",scene)
         //URL=========================================================================
@@ -1858,13 +1887,13 @@ height: auto;
     // let v=localStorage.getItem("v")
     // localStorage.setItem("x",tile22URL)
     // let x=localStorage.getItem("x")
-   
+
 
 
      let tile1 = new SceneLayer({
         url: tile1URL,
       });
-    
+
       let tile2 = new SceneLayer({
         url:  tile2URL,
       });
@@ -1928,17 +1957,17 @@ height: auto;
       let tile22 = new SceneLayer({
         url:tile22URL,
       });
-      
+
 
      //DubaiDataRoadsLayers================================================================================================================
-  
+
      let UAE_Ports = new SceneLayer({
         url: UAE_PortsURL,
       });
 
       let UAE_Airpots = new SceneLayer({
         url: UAE_AirpotsURL,
-       
+
 
       });
 
@@ -1962,9 +1991,9 @@ height: auto;
             offset:10,
           }
       })
-      
-     
-   
+
+
+
     // Camera position for DubaiCreek
     let btnDubaiCreek =document.getElementById("btnDubaiCreek")
     btnDubaiCreek.addEventListener("click",(()=>{
@@ -1974,11 +2003,11 @@ height: auto;
             heading: 166.8305,
             fov: 55.0000,
           })
-          
+
           view.goTo(camera, { duration: 10000 })
     }))
-  
-          
+
+
       //hide&showDubaiData Icons============================================================================================================
         let p1=true
         let p2=true
@@ -1994,7 +2023,7 @@ height: auto;
               center: [55.139999, 25.076929],
               zoom: 10
             },{duration:2000})
-  
+
         // scene.removeMany([UAE_Airpots,MarineRoads,UAE_RailWay,UAE_Road])
         document.getElementById("ports").style.border="3px solid green"
         document.getElementById("airport").style.border="none"
@@ -2002,12 +2031,12 @@ height: auto;
         document.getElementById("UAERoads").style.border="none"
         document.getElementById("UAERailWay").style.border="none"
         p1=false
-       
-      } 
+
+      }
       else if (p1==false){
         scene.remove(UAE_Ports)
         document.getElementById("ports").style.border="none"
-         p1=true  
+         p1=true
       }
       })
    //hide&show airports=========================================================
@@ -2019,22 +2048,22 @@ height: auto;
               center: [55.139999, 25.076929],
               zoom: 10
             },{duration:2000})
-  
+
         // scene.removeMany([UAE_Ports,MarineRoads,UAE_RailWay,UAE_Road])
         document.getElementById("airport").style.border="3px solid green"
         document.getElementById("ports").style.border="none"
         document.getElementById("marinRoads").style.border="none"
         document.getElementById("UAERoads").style.border="none"
         document.getElementById("UAERailWay").style.border="none"
-       
-       
+
+
         p2=false
-       
-      } 
+
+      }
       else if (p2==false){
         scene.remove(UAE_Airpots)
         document.getElementById("airport").style.border="none"
-         p2=true  
+         p2=true
       }
       })
       //hide&show marinRoads=========================================
@@ -2046,22 +2075,22 @@ height: auto;
               center: [55.139999, 25.076929],
               zoom: 14
             },{duration:2000})
-  
-  
+
+
         // scene.removeMany([UAE_Ports,UAE_Airpots,UAE_RailWay,UAE_Road])
         document.getElementById("marinRoads").style.border="3px solid green"
         document.getElementById("ports").style.border="none"
         document.getElementById("airport").style.border="none"
         document.getElementById("UAERoads").style.border="none"
         document.getElementById("UAERailWay").style.border="none"
-      
+
         p3= false
-      
-      } 
+
+      }
       else if (p3==false){
         scene.remove(MarineRoads)
         document.getElementById("marinRoads").style.border="none"
-         p3=true  
+         p3=true
       }
       })
       //hide&showUAERoads================================================
@@ -2073,21 +2102,21 @@ height: auto;
               center: [55.139999, 25.076929],
               zoom: 10.2
             },{duration:2000})
-  
+
         // scene.removeMany([UAE_Ports,UAE_Airpots,UAE_RailWay,MarineRoads])
         document.getElementById("UAERoads").style.border="3px solid green"
         document.getElementById("ports").style.border="none"
         document.getElementById("airport").style.border="none"
         document.getElementById("UAERailWay").style.border="none"
         document.getElementById("marinRoads").style.border="none"
-      
+
         p4=false
-       
-      } 
+
+      }
       else if (p4==false){
         scene.remove(UAE_Road)
         document.getElementById("UAERoads").style.border="none"
-         p4=true  
+         p4=true
       }
       })
       //hide&show UAERailWay=======================================================
@@ -2095,21 +2124,21 @@ height: auto;
       UAERailWay.addEventListener("click",function () {
       if (p5==true) {
         scene.add(UAE_RailWay)
-  
+
         // scene.removeMany([UAE_Ports,UAE_Airpots,UAE_Road,MarineRoads])
         document.getElementById("UAERailWay").style.border="3px solid green"
         document.getElementById("ports").style.border="none"
         document.getElementById("airport").style.border="none"
         document.getElementById("marinRoads").style.border="none"
         document.getElementById("UAERoads").style.border="none"
-       
-      
+
+
         p5= false
-      } 
+      }
       else if (p5==false){
         scene.remove(UAE_RailWay)
         document.getElementById("UAERailWay").style.border="none"
-         p5=true  
+         p5=true
       }
       })
 
@@ -2124,9 +2153,9 @@ height: auto;
             <li>Name :{Name }</li>
             <li>SymbolID:{SymbolID}</li>
             <li>PopupInfo :{PopupInfo  }</li>
-        
+
             </ul>`
-         
+
         }
       });
 
@@ -2139,7 +2168,7 @@ height: auto;
             <li>Name :{Name }</li>
             <li>SymbolID:{SymbolID}</li>
             <li>PopupInfo :{PopupInfo  }</li>
-        
+
             </ul>`
         }
       });
@@ -2155,7 +2184,7 @@ height: auto;
             <li>NATIONAL_IMPORTANCE:{NATIONAL_IMPORTANCE }</li>
             <li>OSTAL_CODE:{OSTAL_CODE}</li>
             </ul>`
-         
+
         }
       });
 
@@ -2163,12 +2192,12 @@ height: auto;
         url: landMarksURL,
         popupTemplate:{
           title:"Land Marks",
-          content:`<ul>  
+          content:`<ul>
             <li>COMMUNITY_NAME_A :{COMMUNITY_NAME_A }</li>
             <li>ALT_ADD_ENG:{ALT_ADD_ENG }</li>
             <li>COMMUNITY_NAME_E  :{COMMUNITY_NAME_E }</li>
             </ul>`
-         
+
         }
       });
 
@@ -2183,10 +2212,10 @@ height: auto;
             <li>NATIONAL_IMPORTANCE :{NATIONAL_IMPORTANCE }</li>
             <li>ISO_COUNTRY_CODE  :{ISO_COUNTRY_CODE  }</li>
             </ul>`
-         
+
         }
       });
-    
+
 
       let shpoLayer = new FeatureLayer({
         url: shopURL,
@@ -2199,7 +2228,7 @@ height: auto;
             <li>NATIONAL_IMPORTANCE:{NATIONAL_IMPORTANCE }</li>
             <li>OSTAL_CODE:{OSTAL_CODE}</li>
             </ul>`
-         
+
         }
 
       });
@@ -2228,7 +2257,7 @@ height: auto;
       let l5=false
       let l6=false
       let tram=document.getElementById("tramStation")
-   
+
       tram.addEventListener("click",function () {
       if (l1==false) {
         scene.add(tramStation)
@@ -2236,9 +2265,9 @@ height: auto;
               center: [55.30634599569362, 25.25730655128795],
               zoom: 14
             },{duration:3000})
-          
 
-   
+
+
         document.getElementById("tramStation").style.border="3px solid green"
         document.getElementById("metroStation").style.border="none"
         document.getElementById("landMark").style.border="none"
@@ -2247,21 +2276,21 @@ height: auto;
         document.getElementById("shop").style.border="none"
         // scene.removeMany([metroStaation,marineStation,landMarks,shpoLayer,hotelLayer])
          l1 = true
-        
-       
-        
-      } 
+
+
+
+      }
       else if (l1==true){
         scene.remove(tramStation)
         document.getElementById("tramStation").style.border="none"
          l1=false
-         
+
       }
       })
 
       //metro===========================================================================
       let metro=document.getElementById("metroStation")
-     
+
     metro.addEventListener("click",function () {
       if (l2==false) {
         scene.add(metroStaation)
@@ -2269,7 +2298,7 @@ height: auto;
               center: [55.320399568033686, 25.252925758455294],
               zoom: 13
             },{duration:3000})
-         
+
 
 
         // scene.removeMany([tramStation,marineStation,landMarks,shpoLayer,hotelLayer])
@@ -2279,20 +2308,20 @@ height: auto;
         document.getElementById("marinStation").style.border="none"
         document.getElementById("hotel").style.border="none"
         document.getElementById("shop").style.border="none"
-     
+
        l2=true
-      
-        
-      } 
+
+
+      }
       else if (l2==true){
         scene.remove(metroStaation)
         document.getElementById("metroStation").style.border="none"
-         l2=false  
+         l2=false
       }
       })
       //landMark====================================================
       let land=document.getElementById("landMark")
-      
+
     land.addEventListener("click",function () {
       if (l3==false) {
         scene.add(landMarks)
@@ -2307,24 +2336,24 @@ height: auto;
         document.getElementById("marinStation").style.border="none"
         document.getElementById("hotel").style.border="none"
         document.getElementById("shop").style.border="none"
-      
+
       l3=true
-     
-        
-      } 
+
+
+      }
       else if (l3==true){
         scene.remove(landMarks)
         document.getElementById("landMark").style.border="none"
-         l3=false  
+         l3=false
       }
       })
       //marinstation=============================================================
       let marin=document.getElementById("marinStation")
-      
+
     marin.addEventListener("click",function () {
       if (l4==false) {
         scene.add(marineStation)
-      
+
         view.goTo({
               center: [55.139999, 25.076929],
               zoom: 13.5
@@ -2336,20 +2365,20 @@ height: auto;
         document.getElementById("tramStation").style.border="none"
         document.getElementById("hotel").style.border="none"
         document.getElementById("shop").style.border="none"
-       
+
        l4=true
-      
-        
-      } 
+
+
+      }
       else if (l4==true){
         scene.remove(marineStation)
         document.getElementById("marinStation").style.border="none"
-         l4=false  
+         l4=false
       }
       })
       //hotel icon=================================
       let hotel=document.getElementById("hotel")
-      
+
       hotel.addEventListener("click",function () {
         if (l5==false) {
           scene.add(hotelLayer)
@@ -2364,20 +2393,20 @@ height: auto;
         document.getElementById("marinStation").style.border="none"
           document.getElementById("tramStation").style.border="none"
           document.getElementById("shop").style.border="none"
-       
+
         l5=true
-       
-          
-        } 
+
+
+        }
         else if (l5==true){
           scene.remove(hotelLayer)
           document.getElementById("hotel").style.border="none"
-           l5=false  
+           l5=false
         }
         })
         //shop icon========================================================================
         let shop=document.getElementById("shop")
-      
+
       shop.addEventListener("click",function () {
         if (l6==false) {
           scene.add(shpoLayer)
@@ -2392,14 +2421,14 @@ height: auto;
         document.getElementById("marinStation").style.border="none"
         document.getElementById("hotel").style.border="none"
         document.getElementById("tramStation").style.border="none"
-       
+
         l6=true
-          
-        } 
+
+        }
         else if (l6==true){
           scene.remove(shpoLayer)
           document.getElementById("shop").style.border="none"
-           l6=false  
+           l6=false
         }
         })
 
@@ -2428,14 +2457,14 @@ height: auto;
             },
           },
         });
-       
+
 
         const footprintBuildings = new FeatureLayer({
           url: "https://services7.arcgis.com/DwizEDmrQPSoeQNj/arcgis/rest/services/DubaifootprintBuildings2_WFL1/FeatureServer/0",
           elevationInfo:{
             offset:10,
           }
-         
+
         });
 
         const lidarBuilding = new SceneLayer({
@@ -2444,13 +2473,13 @@ height: auto;
       });
 
       let buildingWithTextureURL="https://tiles.arcgis.com/tiles/DwizEDmrQPSoeQNj/arcgis/rest/services/TXR_SlideTourAnimation_v3_WSL22/SceneServer"
-     
+
 
       let buildingWithTexture = new SceneLayer({
         url: buildingWithTextureURL,
         popupEnabled: false,
       });
-     
+
       // Create a new SceneView and set the weather to cloudy
       const view = new SceneView({
           map: scene,
@@ -2458,7 +2487,7 @@ height: auto;
             components:["zoom","compass"]
 
           },
-          
+
           container: "viewDiv",
           qualityProfile: "high",
 
@@ -2477,23 +2506,23 @@ height: auto;
           },
         });
 
-       
 
 
-      
+
+
          //event in scene====================================================
          let viewDiv=document.getElementById("viewDiv")
          viewDiv.addEventListener("click",(()=>{
           document.getElementById("subpoint").style.display="none"
          }))
         //addBookmarks=========================================================================
-       
+
         view.on("click",((e)=>{
       console.log("coord",e)
      }))
-        
-        
-       
+
+
+
     //    let dubaiMarinaicon=document.getElementById("dubaiMarinaicon")
     //    dubaiMarinaicon.addEventListener("click",function(){
     //     view.goTo({
@@ -2503,7 +2532,7 @@ height: auto;
     //    })
 
     //    let dubaimarinawalkicon=document.getElementById("dubaimarinawalkicon")
-      
+
     //    dubaimarinawalkicon.addEventListener("click",function(){
     //     view.goTo({
     //       center:[55.148925,25.084894],
@@ -2513,7 +2542,7 @@ height: auto;
 
 
     //    let dubaiDhowicon=document.getElementById("dubaiDhowicon")
-      
+
     //    dubaiDhowicon.addEventListener("click",function(){
     //     view.goTo({
     //       center:[55.14030278,25.08059167],
@@ -2522,7 +2551,7 @@ height: auto;
     //    })
 
     //    let laketowersicon=document.getElementById("laketowersicon")
-      
+
     //    laketowersicon.addEventListener("click",function(){
     //    view.goTo({
     //      center:[55.14172222,25.06928333],
@@ -2532,7 +2561,7 @@ height: auto;
 
 
     //   let dubaiMallicon=document.getElementById("dubaiMallicon")
-      
+
     //   dubaiMallicon.addEventListener("click",function(){
     //   view.goTo({
     //     center:[55.14050278,25.07643056],
@@ -2541,26 +2570,26 @@ height: auto;
     //  })
 
     //  let Burjkhalifaicon =document.getElementById("Burjkhalifaicon")
-      
+
     //  Burjkhalifaicon.addEventListener("click",function(){
     //   view.goTo({
     //     center:[55.27437778,25.19719722],
     //     zoom:16.5
     //   })
     //  })
-     
+
 
     //  let dubaidowentowenicon =document.getElementById("dubaidowentowenicon")
-      
+
     //  dubaidowentowenicon.addEventListener("click",function(){
     //    view.goTo({
     //      center:[55.27841389,25.19498611],
     //      zoom:15
     //    })
     //   })
-       
+
     //   let creekharbouricon =document.getElementById("creekharbouricon")
-      
+
     //   creekharbouricon.addEventListener("click",function(){
     //    view.goTo({
     //      center:[55.36413056,25.19454444],
@@ -2570,10 +2599,10 @@ height: auto;
 
 
 
- 
+
        //add point icons to panal=========================================================
- 
-     
+
+
        let point= document.getElementById("point")
        let a=1
        let R=1
@@ -2582,7 +2611,7 @@ height: auto;
       // document.getElementById("FacilitiesText").style.visibility="visible"
       //  }))
        point.addEventListener("click",function() {
-        
+
         if(a==1){
           document.getElementById("subpoint").style.display="inline"
           document.getElementById("point").style.border="2px solid green"
@@ -2603,8 +2632,8 @@ height: auto;
       })
       //hide&show bookmark====================================================================
       let bookmark= document.getElementById("bookmark")
-     
-      
+
+
        bookmark.addEventListener("click",function() {
         if(k==1){
           document.getElementById("bookmark").style.border="2px solid green"
@@ -2627,7 +2656,7 @@ height: auto;
 
         //addDubaiRoadsIconsToPanal=============================
         let Roads= document.getElementById("RoadsIcon")
-       
+
        Roads.addEventListener("click",function() {
         if(R==1){
           document.getElementById("subRoadsIcon").style.display="inline"
@@ -2649,10 +2678,10 @@ height: auto;
       })
       //show&hideDubaiRoadsLayer=========================================================
 
-        
-        
-       
-       
+
+
+
+
 
       //Show and Hide ============================================================
 
@@ -2660,12 +2689,12 @@ height: auto;
       let flag2= false
       let flag3 =false
       let btnLidar = document.getElementById("btnLidar")
-      
+
         btnLidar.addEventListener("click", function () {
           if (flag1 == false) {
             scene.layers.items[0].visible=true
             scene.removeMany([footprintBuildings,buildingWithTexture])
-          
+
             view.goTo({
               center: [55.136679, 25.076927],
               zoom: 16
@@ -2683,7 +2712,7 @@ height: auto;
 
 
         // let btnFootPrint = document.getElementById("btnFootPrint")
-       
+
 
 
         // btnFootPrint.addEventListener("click", function () {
@@ -2695,7 +2724,7 @@ height: auto;
         //       zoom: 17
         //     }, { duration: 4000 })
         //     scene.removeMany([lidarBuilding,buildingWithTexture])
-            
+
         //     flag1=false
         //     flag2= true
         //     flag3 =false
@@ -2726,7 +2755,7 @@ height: auto;
               tilt:80,
               zoom: 17
             },{duration:3000})
-       
+
             w = true
             btnwater.textContent = "Water"
           }
@@ -2740,13 +2769,13 @@ height: auto;
 
 //===============================================================================
        let btnTexture =document.getElementById("btnTexture")
-     
+
        btnTexture.addEventListener("click",function () {
       // if (flag3==false) {
       //   scene.add(buildingWithTexture)
       //   scene.layers.items[0].visible=false
         // scene.add(buildingWithTexture)
-        
+
 
 
 
@@ -2763,17 +2792,17 @@ height: auto;
         // JSON.parse(localStorage.getItem("n"))
         // JSON.parse(localStorage.getItem("o"))
         // JSON.parse(localStorage.getItem("y"))
-        
+
         view.goTo({
           center: [55.136679,	25.076927 ],
           zoom:15
-        
+
         },{duration:4000})
-       
+
            flag1=false
             flag2= false
             flag3 =true
-   //   } 
+   //   }
       // else if (flag3==true){
       //   scene.remove(buildingWithTexture)
       //    flag3=false
@@ -2789,8 +2818,8 @@ height: auto;
       //     position: 50 // position set to middle of the view (50%)
       //   });
       //   view.ui.add(swipe);
-   
-       
+
+
 
        //add Sketch=========================================
        let sketchGraphicLayer=new GraphicsLayer()
@@ -2800,24 +2829,24 @@ height: auto;
             view: view,
             // graphic will be selected as soon as it is created
             creationMode: "update",
-          }) 
+          })
 
           view.ui.add(sketch, "top-left");
-  
 
-          
+
+
         //search============================================
-       
+
         const searchWidget = new Search({
           view: view,
-         
+
         });
         // Adds the search widget below other elements in
         // the top left corner of the view
         view.ui.add(searchWidget, {
           position: "top-right",
         });
-        
+
 
          //Eidtor Feature Layer=========================================================
          let recreationLayer = new FeatureLayer({
@@ -2827,7 +2856,7 @@ height: auto;
             mode: "absolute-height"
           },
           renderer: {
-            type: "unique-value", 
+            type: "unique-value",
             field: "TYPE",
             visualVariables: [
               {
@@ -2882,12 +2911,12 @@ height: auto;
                   }
                 }
               },
-       
+
             ]
           }
         });
         console.log("recreaction Layer",recreationLayer)
-   
+
         let Transportation = new FeatureLayer({
           title: "Transportation",
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/EditableFeatures3D/FeatureServer/3",
@@ -2947,7 +2976,7 @@ height: auto;
                   styleOrigin: {
                     styleName: "EsriRealisticTransportationStyle",
                     name: "Airplane_Large_Passenger",
-    
+
                   }
                 }
               },
@@ -2967,7 +2996,7 @@ height: auto;
                   styleOrigin: {
                     styleName: "EsriRealisticTransportationStyle",
                     name: "Airplane_Large_Passenger",
-    
+
                   }
                 }
               },
@@ -3001,7 +3030,7 @@ height: auto;
             uniqueValueInfos: [
               {
                 value: "1",
-               
+
                 symbol: {
                   type: "point-3d", // autocasts as new PointSymbol3D()
                   symbolLayers: [
@@ -3059,21 +3088,21 @@ height: auto;
             ]
           }
         });
-  
-      
+
+
          scene.addMany([recreationLayer,Vegetation,Transportation]);
-         
+
         // view.popup.autoOpenEnabled = false; //disable popups
         //  Create the Editor
           const editor = new Expand({
            content: new Editor({
             view: view,
-          
+
         })
       })
           // Add widget to top-right of the view
           view.ui.add(editor, "top-right");
-       
+
         /***********************************
          * Add the widgets' UI elements to the view
          ***********************************/
@@ -3111,7 +3140,7 @@ height: auto;
     let BimBuildingURL="https://services7.arcgis.com/DwizEDmrQPSoeQNj/arcgis/rest/services/Scenebimtxr_WSL2/SceneServer"
     let BimBuilding = new BuildingSceneLayer({
       url:BimBuildingURL,
-      // spatialReference: { wkid:102100} 
+      // spatialReference: { wkid:102100}
     })
 
     scene.add(BimBuilding)
@@ -3121,29 +3150,29 @@ height: auto;
                 content:new BuildingExplorer({
                   view: view,
                   layers: [BimBuilding]
-                }) 
+                })
             })
            //   view.ui.add(buildingExplorer, "top-right");
 
-        
-       
+
+
         view.ui.add(
           [ waterOptExpand,weatherExpand,buildingExplorer, daylightExpand],
           "top-right"
         );
-          
-      
+
+
 //AreaMeasurement3D===========================================
   let measurementWidget = new Expand({
          view:view,
  content: new AreaMeasurement3D({
           view: view
-          
+
         })
-       
+
       })
         view.ui.add(measurementWidget, "top-right");
-  
+
 //   //DirectLineMeasurement3D======================================================
        let measurementWidgetD = new Expand({
           content: new DirectLineMeasurement3D({
@@ -3151,18 +3180,18 @@ height: auto;
           })
         })
        view.ui.add(measurementWidgetD, "top-right");
-   
+
 //PlanNimation===================================================================================
 let graphicsLayer_plan = new GraphicsLayer();
   scene.add(graphicsLayer_plan);
-  
+
   let graphic = new Graphic({
     geometry: {
       type: "point",
-      x:  55.13,     
+      x:  55.13,
       y: 25.07,
       z: 300,
-      spatialReference: { wkid:4326} 
+      spatialReference: { wkid:4326}
     },
     symbol: {
       type: "point-3d",
@@ -3174,7 +3203,7 @@ let graphicsLayer_plan = new GraphicsLayer();
         width:150.539997100830078,
         height:136.0347914695739746,
         depth:154.677627563476563,
-     
+
         heading: 205,
         roll: 0,
         tilt: 0
@@ -3191,14 +3220,14 @@ let graphicsLayer_plan = new GraphicsLayer();
 
  view.when().then(()=>{
   anime({
-    
+
     targets:geometry,
      y:25.046927,
     duration: 100000,
     easing: "easeInOutSine",
     loop: true,
     update: function() {
-    
+
       graphicsLayer_plan.remove(graphic);
       let symbol = graphic.symbol;
        graphic = graphic.clone();
@@ -3213,16 +3242,16 @@ let graphicsLayer_plan = new GraphicsLayer();
  }))
 
  //Add Car Animation===================================================================
-  
- 
+
+
 function Car() {
   let graphicCar = new Graphic({
     geometry: {
       type: "point",
-      x:6137576.9336763555, 
+      x:6137576.9336763555,
       y:2883964.6243444795,
       z:30,
-      spatialReference: { wkid:102100} 
+      spatialReference: { wkid:102100}
     },
     symbol: {
       type: "point-3d",
@@ -3234,7 +3263,7 @@ function Car() {
         width:50.5648219299316406,
         height:50.4376743888854981,
         depth:150.6825686645507814,
-     
+
         heading: 400,
         roll: 0,
         tilt: 0
@@ -3250,7 +3279,7 @@ function Car() {
   let geometry = graphicCar.geometry;
   view.when().then(()=>{
   anime({
-    
+
     targets:geometry,
      x:6139308.631765692,
      y:2885948.212561443,
@@ -3258,7 +3287,7 @@ function Car() {
     easing: "easeInOutSine",
     loop: true,
     update: function() {
-    
+
       graphicsLayer_plan.remove(graphicCar);
       let symbol = graphicCar.symbol;
       graphicCar = graphicCar.clone();
@@ -3276,12 +3305,12 @@ function Car() {
          * Initialize the LineOfSight widget
          **************************************/
          const lineOfSight = new LineOfSight({
-          
+
           view: view,
           container: "losWidget",
         });
-        
-      
+
+
        //Slice============================================================================
        const slice = new Expand({
           content: new Slice({
@@ -3294,8 +3323,8 @@ function Car() {
            measurementWidget.content.viewModel.clear()
            measurementWidgetD.content.viewModel.clear()
            lineOfSight.viewModel.clear()
-        })) 
-        
+        }))
+
         view.ui.add(slice, {
           position: "top-right"
         });
@@ -3304,10 +3333,10 @@ function Car() {
         searchWidget.watch('activeSource', function(evt){
           evt.placeholder = "Search";
         })
-      
+
         let homeWidget = new Home({
         view: view,
-       
+
        });
 
 
@@ -3324,18 +3353,18 @@ function Car() {
         view.ui.add(basemapGallery, {
           position: "top-right"
         });
-     
+
         //locate=============================================
         let locateWidget = new Locate({
-          view: view,   
+          view: view,
           graphic: new Graphic({
-            symbol: { type: "simple-marker" } 
+            symbol: { type: "simple-marker" }
           })
         });
         view.ui.add(locateWidget, "top-left");
-       
 
-       
+
+
 
         /**************************************
          * Realistic water options
@@ -3390,14 +3419,14 @@ function Car() {
         });
 
         document
-        
+
           .getElementById("reflection")
           .addEventListener("click", (event) => {
             view.environment.lighting.waterReflectionEnabled =
               event.target.checked;
           });
 
-     
+
 
         /**************************************
          * Add symbols to mark the intersections
@@ -3491,7 +3520,7 @@ function Car() {
           group: "top-right",
           expand: true,
         });
-       
+
         view.ui.add(losExpand, "top-right");
         /***********************************
          * Add functionality to change between flooding and no flooding
@@ -3585,9 +3614,9 @@ function Car() {
           offset: 40,
          },
       })
-   
-       
-       
+
+
+
        //hide&show RailWay============================================
         let rail=document.getElementById("railWay")
         let i=false
@@ -3607,11 +3636,11 @@ function Car() {
           document.getElementById("slideDiv").style.display="none"
           document.getElementById("bookmark").style.border="none"
           document.getElementById("RoadsIcon").style.border="none"
-         
-      
-        i=true 
-        
-      } 
+
+
+        i=true
+
+      }
       else if (i==true){
         scene.remove(railWay)
         document.getElementById("railWay").style.border="none"
@@ -3621,8 +3650,8 @@ function Car() {
         document.getElementById("slideDiv").style.display="none"
         document.getElementById("bookmark").style.border="none"
         document.getElementById("RoadsIcon").style.border="none"
-      
-         i=false  
+
+         i=false
       }
       })
         /****************************************
@@ -3720,19 +3749,19 @@ function Car() {
         // view.ui.add(railwaysOptExpand, "top-right");
 
 
-         
- 
- 
 
- 
- 
+
+
+
+
+
         // The view must be ready (or resolved) before you can
         // access the properties of the WebScene
         view.when(() => {
           // The slides are a collection inside the presentation
           // property of the WebScene
           const slides = scene.presentation.slides;
-          
+
 
          let slideDiv=document.getElementById("slideDiv")
           // Loop through each slide in the collection
@@ -3751,37 +3780,37 @@ function Car() {
 
             // Create a new <img> element and place it inside the newly created <div>.
             // This will reference the thumbnail from the slide.
-           
+
             const img = new Image();
             img.src = slide.thumbnail.url;
-           
+
             img.classList.add("i")
-            
+
             slideDiv.appendChild(img);
-          
-            
-       
+
+
+
             img.addEventListener("click", () => {
-                  
+
                     slide.applyTo(view).then(()=>{
                       for (let i = 0; i <= scene.layers.items.length-1; i++) {
                         console.log("i",i)
                         scene.layers.items[i].visible=true
                       }
-                    
+
                     })
-                
-                    
- 
+
+
+
             });
           });
         });
 
 
-          
-        
-        
-       
+
+
+
+
 
         // Add point style
         // const pointsOptExpand = new Expand({
@@ -3815,12 +3844,12 @@ function Car() {
 	// 		promiseUtils.debounce(async (e) => {
   //               console.log("first",e)
 	// 			const ht = await view.hitTest(e, {
-                    
+
 	// 				include: [lidarBuilding]
 	// 			});
   //               console.log("ht", ht.results)
 
-			
+
 	// 			for (const result of ht.results) {
 	// 				const graphic = result.graphic;
   //                   console.log("graphic",graphic)
@@ -3852,16 +3881,16 @@ function Car() {
 // 			return [255, 255, 255, 0];
 // 		  });
 // 		  const faces = [];
-		
+
 // 		  const length = vertices.length;
-		
+
 // 		  for (let i = 0; i < length; i++) {
 // 			const vIdx1 = i;
 // 			const vIdx2 = (i + 1) % vertices.length;
-		
+
 // 			const vIdx3 = length + i;
 // 			const vIdx4 = length + ((i + 1) % vertices.length);
-		
+
 // 			const bottomVertex = [].concat.apply([], vertices[vIdx1]);
 // 			bottomVertex[2] = zmin;
 // 			colors.push([255, 255, 255, 240]);
@@ -3870,7 +3899,7 @@ function Car() {
 // 			  faces.push(vIdx2, vIdx3, vIdx1, vIdx4, vIdx3, vIdx2);
 // 			}
 // 		  }
-		
+
 // 		  const mesh = new Mesh({
 // 			vertexAttributes: {
 // 			  position: vertices.flat(),
@@ -3889,7 +3918,7 @@ function Car() {
 // 			spatialReference: { wkid: 102100}
 // 			// specify a spatial reference if the position of the vertices is not in WGS84
 // 		  });
-		
+
 // 		  const polyGraphic = new Graphic({
 // 			geometry: mesh,
 // 			symbol: {
@@ -3903,24 +3932,24 @@ function Car() {
 // 			}
 // 		  });
 // 		  view.graphics.add(polyGraphic);
-// 		})  
+// 		})
 // }
 
-// 	  createBoundingBox(6153064.4263475165,6153078.66429853,2899958.463822711,  
+// 	  createBoundingBox(6153064.4263475165,6153078.66429853,2899958.463822711,
 //     2899984.978093351,-0.0016342690214514732,274.74958221334964)
 
       });
-       
 
-      
-      
+
+
+
 
 
     </script>
   </head>
 
   <body >
-   
+
     <div id="viewDiv">
       <!-- Line of Sight Section -->
       <div id="menu" class="esri-widget">
@@ -3971,7 +4000,7 @@ function Car() {
         >
       </div>
       <!-- 3D Railways Visuals Section -->
-     
+
       <!-- Points Menu Section -->
       <!-- <div id="points-menu" class="item">
         <h4>Select points:</h4>

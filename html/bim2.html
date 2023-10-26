@@ -15,9 +15,33 @@
       require([
         "esri/WebScene",
         "esri/views/SceneView",
-        "esri/widgets/BuildingExplorer"
-      ], (WebScene, SceneView, BuildingExplorer) => {
+        "esri/widgets/BuildingExplorer",
+        'esri/identity/IdentityManager',
+      ], (WebScene, SceneView, BuildingExplorer,identityManager) => {
         // Load webscene and display it in a SceneView
+
+        // Access Privte ArcgisOnline Rescources
+       const portalUrl = 'https://www.arcgis.com';
+       const username ='hazem_txresam';
+       const password = '123456eR@@@';
+       const server = portalUrl + '/sharing/rest';
+        const tokenServiceUrl = server + '/generateToken';
+        const serverInfo = {
+        tokenServiceUrl
+      };
+      const userInfo = {
+        username,
+        password
+      };
+      /* GENERATES AND REGISTERS THE TOKEN */
+      identityManager.generateToken(serverInfo, userInfo).then((tokenInfo) => {
+        console.log("tokenInfo",tokenInfo)
+        identityManager.registerToken({
+          ...tokenInfo,
+          server
+        })
+      });
+//===========================================================================================
         const webscene = new WebScene({
           portalItem: {
             id: "242b09338b8347f8a772b5ff5c368e96"
@@ -63,8 +87,8 @@
   position: absolute;
   top: 0px;
   left: 5px;
-  
- 
+
+
   z-index: 1;
 }
 #dropdownMenuButton{
@@ -74,12 +98,12 @@
 .dropdown-item{
   text-align: center;
   font-family: 'Times New Roman', serif;
-  
+
 }
 .dropdown-item:hover{
   background-color: #3e8e41;
- 
-  
+
+
 }
 .esri-component.esri-zoom.esri-widget{
     position: absolute;
@@ -87,7 +111,7 @@
   }
   .esri-widget--button.esri-Compass{
     position: absolute;
-  
+
     top: 150px;
   }
   .esri-view .esri-view-surface--inset-outline:focus::after {
@@ -112,6 +136,6 @@
 
     <div id="viewDiv" class="esri-widget"></div>
 
-   
+
   </body>
 </html>
